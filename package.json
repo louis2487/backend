@@ -1,0 +1,53 @@
+{
+  "name": "nodejs-express-mysql",
+  "version": "1.0.0",
+  "description": "Node.js Restful CRUD API with Node.js, Express and MySQL",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "import-photos": "node scripts/import_data_photos.js",
+    "import-photos:watch": "node scripts/import_data_photos.js --watch"
+  },
+  "keywords": [
+    "nodejs",
+    "express",
+    "mysql",
+    "restapi"
+  ],
+  "author": "bezkoder",
+  "license": "ISC",
+  "dependencies": {
+    "@pdf-lib/fontkit": "^1.1.1",
+    "@pspdfkit/nodejs": "^0.0.3",
+    "axios": "^1.19.0",
+    "big-json": "^3.2.0",
+    "cors": "^2.8.5",
+    "docx": "^9.7.1",
+    "exceljs": "^4.3.0",
+    "express": "^4.18.1",
+    "iconv-lite": "^0.6.3",
+    "image-to-pdf": "^2.0.0",
+    "jszip": "^3.10.1",
+    "libreoffice-convert": "^1.4.1",
+    "moment-timezone": "^0.5.40",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.5-lts.1",
+    "mysql": "^2.18.1",
+    "mysql2": "^2.3.3",
+    "node-html-to-image": "^3.2.4",
+    "nodemailer": "^6.9.1",
+    "pdf-lib": "^1.17.1",
+    "pdf-parse": "^2.4.5",
+    "pdfjs-dist": "^4.10.38",
+    "pg": "^8.13.1",
+    "proj4": "^2.21.0",
+    "readline-json": "0.0.4",
+    "request": "^2.88.2",
+    "shapefile": "^0.6.6",
+    "sharp": "^0.35.3",
+    "winston": "^3.8.2",
+    "winston-daily-rotate-file": "^4.7.1",
+    "xlsx": "^0.18.5",
+    "xml-js": "^1.6.11"
+  }
+}

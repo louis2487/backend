@@ -1,0 +1,20 @@
+j.shp 사전 검증 (ogrinfo) — 2026-07-10
+========================================
+경로: c:\jangsu\j\j.shp
+건수: 558 (Polygon)
+원본 좌표 범위: X 233525~255381, Y 319992~348841 → EPSG:5186 (Korea 2000) 추정
+.prj: 없음 → j.prj(EPSG:5186) 생성 + import 시 -s_srs EPSG:5186 적용
+
+필수 컬럼 (import 파이프라인):
+  pnu          String(19)   예: 4574032028111490007
+  jibun        String(100)  예: 1149-7대
+  col_adm_se   String(5)    예: 45740
+  sgg_oid      Integer64    예: 402751
+
+지목/면적 (실태조사 매핑 후보):
+  토지지목코   String(254)  → col_d / fm_land_cd
+  실지목코드   String(254)  → col_ac
+  면적         Real         → land_area 보조 (geom 계산 우선)
+  소재지       String(254)  → addr (전체 주소, jibun은 지번만)
+
+주의: PNU 45740(순창군) — 앱 지도 중심은 장수군청(45720대). bbox 검증 시 실제 좌표 사용.
