@@ -29,8 +29,8 @@ function indent5(text) {
 }
 
 function coverAndDraw(page, font, text, x, y, width = 90, height = 12, size = 8, align = 'left') {
-  if (!text) return;
-  let drawText = String(text);
+  let drawText = String(text == null ? '' : text).trim();
+  if (!drawText) drawText = '-';
   if (drawText.length > 60) drawText = drawText.slice(0, 60);
 
   page.drawRectangle({

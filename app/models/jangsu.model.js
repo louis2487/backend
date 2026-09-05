@@ -154,7 +154,7 @@ Jangsu.deleteJangsuImg = async (req, result) => {
 Jangsu.updateJangsuInfoData = async (req, result) => {
   try {
     // console.log(req.body)
-    var { col_ac, col_ag, col_ap, col_aq, col_ar, col_ah, col_ai, col_ax, col_at, col_al, col_am, col_an, col_au, col_av, col_aw, col_az, col_ba, col_ay, col_bb, col_bc, col_bd, col_be, col_bf, col_bg, col_bh, pidx, flag, pk_uuid, addr, col_d, land_area } = req.body;
+    var { col_ac, col_ag, col_ap, col_aq, col_ar, col_ah, col_ai, col_ax, col_at, col_al, col_am, col_an, col_au, col_av, col_aw, col_az, col_ba, col_ay, col_bb, col_bc, col_bd, col_be, col_bf, col_bg, col_bh, col_k, col_l, col_m, col_n, col_aj, pidx, flag, pk_uuid, addr, col_d, land_area } = req.body;
     var date1 = '';
     var date2 = '';
     var date3 = '';
@@ -185,7 +185,7 @@ Jangsu.updateJangsuInfoData = async (req, result) => {
     const hasSurveyInput = [
       col_aq, col_ar, col_ai, col_ax, col_at, date1, date2, col_an, col_au,
       col_av, col_aw, col_az, col_ba, date3, date4, col_bc, col_bd, col_be,
-      col_bf, col_bg, col_bh,
+      col_bf, col_bg, col_bh, col_ac, col_k, col_l, col_m, col_n, col_aj,
     ].some(hasText);
     const writeDataFlag = hasSurveyInput ? 'Y' : 'N';
 
@@ -220,6 +220,11 @@ Jangsu.updateJangsuInfoData = async (req, result) => {
         col_bf = '${col_bf}',
         col_bg = '${col_bg}',
         col_bh = '${col_bh}',
+        col_k = '${String(col_k ?? '').replace(/'/g, "''")}',
+        col_l = '${String(col_l ?? '').replace(/'/g, "''")}',
+        col_m = '${String(col_m ?? '').replace(/'/g, "''")}',
+        col_n = '${String(col_n ?? '').replace(/'/g, "''")}',
+        col_aj = '${String(col_aj ?? '').replace(/'/g, "''")}',
         write_data = '${writeDataFlag}',
         mod_date = TO_CHAR(NOW(), 'YYYYMMDDHH24MISS')
          where fpop_key = '${pidx}'`
@@ -259,6 +264,11 @@ Jangsu.updateJangsuInfoData = async (req, result) => {
         col_bf = '${col_bf}',
         col_bg = '${col_bg}',
         col_bh = '${col_bh}',
+        col_k = '${String(col_k ?? '').replace(/'/g, "''")}',
+        col_l = '${String(col_l ?? '').replace(/'/g, "''")}',
+        col_m = '${String(col_m ?? '').replace(/'/g, "''")}',
+        col_n = '${String(col_n ?? '').replace(/'/g, "''")}',
+        col_aj = '${String(col_aj ?? '').replace(/'/g, "''")}',
         write_data = '${writeDataFlag}'
          where csft_seq = '${pk_uuid}'`
       // var uuid = req.body.idx;
@@ -932,7 +942,7 @@ Jangsu.getBoundsList = async (req) => {
         ROUND(ST_Area(geom::geography)::numeric, 1)::int
       ) AS av_area,
       fm_land_cd, reg_date, mod_date, memo, cropcodes, addr, crop_nm,
-      col_d, col_ac, col_ag, col_ah,
+      col_d, col_ac, col_ag, col_ah, col_ak, col_bg,
       re_area, re_area_reason,
       'N' AS inspection_flag,
       '' AS worked_user,
